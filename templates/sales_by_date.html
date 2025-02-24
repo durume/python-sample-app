@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sales By Date</title>
+</head>
+<body>
+    <h1>Check Sales By Date</h1>
+    <form method="POST">
+        <label for="sales_date">Enter date (YYYY-MM-DD):</label>
+        <input type="text" id="sales_date" name="sales_date" />
+        <button type="submit">Retrieve Sales</button>
+    </form>
+
+    {% if asked_date %}
+        <hr>
+        <h2>You asked for date: {{ asked_date }}</h2>
+        <p>Total Sales: USD {{ total_sales }}</p>
+    {% endif %}
+
+    <p><a href="/">Go back home</a></p>
+</body>
+</html>

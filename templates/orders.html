@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Orders List</title>
+</head>
+<body>
+    <h1>All Orders</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Fruit</th>
+            <th>Quantity</th>
+            <th>Date</th>
+            <th>Amount</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.fruit }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.date }}</td>
+            <td>{{ order.amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="/">Go back home</a></p>
+</body>
+</html>

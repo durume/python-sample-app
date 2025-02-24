@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Order By ID</title>
+</head>
+<body>
+    <h1>Find Order By ID</h1>
+    <form method="POST">
+        <label for="order_id">Order ID:</label>
+        <input type="text" id="order_id" name="order_id" />
+        <button type="submit">Search</button>
+    </form>
+
+    {% if asked_id %}
+        <hr>
+        <h2>You asked for: {{ asked_id }}</h2>
+        {% if retrieved_order %}
+            <h3>Retrieved Data:</h3>
+            <ul>
+                <li>ID: {{ retrieved_order.id }}</li>
+                <li>Fruit: {{ retrieved_order.fruit }}</li>
+                <li>Quantity: {{ retrieved_order.quantity }}</li>
+                <li>Date: {{ retrieved_order.date }}</li>
+                <li>Amount: USD {{ retrieved_order.amount }}</li>
+            </ul>
+        {% else %}
+            <p>No order found with that ID.</p>
+        {% endif %}
+    {% endif %}
+
+    <p><a href="/">Go back home</a></p>
+</body>
+</html>
